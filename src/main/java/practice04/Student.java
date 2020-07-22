@@ -4,7 +4,7 @@ public class Student extends Person {
     protected int klass;
 
     public String introduce() {
-        return super.introduce() + " I am a Student. I am at Class " + klass + ".";
+        return super.basicIntroduce() + " I am a Student. I am at Class " + klass + ".";
     }
 
     public Student(String name, int age, int klass) {

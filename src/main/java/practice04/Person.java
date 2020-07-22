@@ -8,6 +8,10 @@ public class Person {
         return "My name is " + name + ". I am " + age + " years old.";
     }
 
+    public String basicIntroduce() {
+        return "My name is " + name + ". I am " + age + " years old.";
+    }
+
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
