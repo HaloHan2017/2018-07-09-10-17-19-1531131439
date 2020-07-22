@@ -1,7 +1,7 @@
 package practice07;
 
 public class Teacher extends Person {
-    protected Integer klass;
+    private Klass klass;
 
     public String introduce() {
         StringBuilder introduce = new StringBuilder(super.introduce());
@@ -10,33 +10,33 @@ public class Teacher extends Person {
             introduce.append("I teach No Class.");
         } else {
             introduce.append("I teach Class ");
-            introduce.append(klass);
+            introduce.append(klass.getNumber());
             introduce.append(".");
         }
         return introduce.toString();
     }
 
     public String introduceWith(Student student) {
-        if (student.klass.getNumber() == klass) {
-            return super.introduce() + "I am a Teacher. I teach " + student.getName() + ".";
+        if (student.getKlass().getNumber() == klass.getNumber()) {
+            return super.introduce() + " I am a Teacher. I teach " + student.getName() + ".";
         }
-        return super.introduce() + "I am a Teacher. I don't teach " + student.getName() + ".";
+        return super.introduce() + " I am a Teacher. I don't teach " + student.getName() + ".";
     }
 
     public Teacher(String name, int age) {
         super(name, age);
     }
 
-    public Teacher(String name, int age, Integer klass) {
+    public Teacher(String name, int age, Klass klass) {
         super(name, age);
         this.klass = klass;
     }
 
-    public Integer getKlass() {
+    public Klass getKlass() {
         return klass;
     }
 
-    public void setKlass(Integer klass) {
+    public void setKlass(Klass klass) {
         this.klass = klass;
     }
 }
